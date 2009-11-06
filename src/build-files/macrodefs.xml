@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="macrodefs">
+
+	<!-- Properties -->
+
+    <macrodef name="mxmlc2">
+		<attribute name="air" />
+		<attribute name="debug" />
+		<attribute name="player" />
+		<attribute name="failonerror" />
+		<element name="supargs" optional="true" />
+		<sequential>
+			<mxmlc air="@{air}" failonerror="@{failonerror}">
+		        <arg value="-define=CFG::debug,@{debug}" />
+				<arg value="-define=CFG::air,@{air}" />
+				<arg value="-define=CFG::player,@{player}" />
+				<arg value="-define=CFG::vector,&quot;CFG::air || CFG::player > 9&quot;" />
+				<arg value="-define=CFG::array,&quot;!CFG::vector&quot;" />
+		        <arg value="-debug=@{debug}" />
+				<supargs />
+		    </mxmlc>
+		</sequential>
+	</macrodef>
+    
+</project>
