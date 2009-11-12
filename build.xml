@@ -10,7 +10,7 @@
     <property name="lib.out" value="${lib.dir}/${lib.name}"/>
     
     <property name="version.major" value="0" />
-    <property name="version.minor" value="7" />
+    <property name="version.minor" value="8" />
     <property name="version" value="${version.major}.${version.minor}" />
 	
 	<available file="${lib.out}" property="lib.available" />
