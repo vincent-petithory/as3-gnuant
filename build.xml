@@ -24,7 +24,7 @@
     
     <!-- builds the program -->
 
-    <target name="all" description="Compiles the Task">
+    <target name="all" description="Compiles the tasks">
 		<mkdir dir="${bin.dir}" />
         <javac srcdir="${src.dir}" destdir="${bin.dir}">
 			<compilerarg value="-Xlint:unchecked" />
@@ -44,8 +44,27 @@
     
     <!-- installs the program -->
 
-    <target name="install" description="JARs the Task" if="lib.available">
-		
+    <target name="install" description="Installs the files on the system" if="lib.available">
+		<echo message="install" />
+    </target>
+    
+    <!-- Makes a distribution file -->
+	
+	<target name="distclean" description="Delete all generated files that are not part of the distribution">
+    	<antcall target="clean" />
+	</target>
+	
+    <target name="dist" description="Makes a distribution file">
+		<property name="basename" value="${ant.project.name}-${version}" />
+		<tar destfile="${basedir}/${basename}.tar" >
+			<tarfileset 
+				dir="." 
+				prefix="${basename}" 
+				excludes=".git/**,.gitignore,*.tar.gz,bin/**,lib/**"
+			/>
+		</tar>
+		<gzip destfile="${basedir}/${basename}.tar.gz" src="${basedir}/${basename}.tar"/>
+		<delete file="${basedir}/${basename}.tar" />
     </target>
 	
 </project>

@@ -18,8 +18,8 @@
 	<property file="${basedir}/build.properties" />
 
 	<taskdef 
-		file="${project.build.flexc.tasks}" 
-		classpath="${project.build.flexc.jar}" 
+		file="${project.build.system.tasks}" 
+		classpath="${project.build.system.jar}" 
 	/>
 	
 	<!-- metadata -->
@@ -52,7 +52,7 @@
 			<tarfileset 
 				dir="." 
 				prefix="${project.name}-${project.version}" 
-				excludes=".gitignore,.git"
+				excludes=".gitignore,.git/**,*.tar.gz"
 			/>
 		</tar>
 		<gzip destfile="${basedir}/${project.name}-${project.version}.tar.gz" src="${basedir}/${project.name}-${project.version}.tar"/>
