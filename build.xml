@@ -42,12 +42,6 @@
 		<copy file="${src.dir}/as3gnuTasks.tasks" toDir="${lib.dir}" />
     </target>
     
-    <!-- installs the program -->
-
-    <target name="install" description="Installs the files on the system" if="lib.available">
-		<echo message="install" />
-    </target>
-    
     <!-- Makes a distribution file -->
 	
 	<target name="distclean" description="Delete all generated files that are not part of the distribution">
