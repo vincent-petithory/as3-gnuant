@@ -7,5 +7,4 @@ fdb=gnu.as3.ant.tasks.Fdb
 optimizer=gnu.as3.ant.tasks.Optimizer
 pixelbender=gnu.as3.ant.tasks.PixelBender
 adl=gnu.as3.ant.tasks.Adl
-astre=gnu.as3.ant.tasks.Astre
 flexsdk=gnu.as3.ant.tasks.FlexSDK
