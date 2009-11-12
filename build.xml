@@ -40,6 +40,10 @@
 			</manifest>
 		</jar>
 		<copy file="${src.dir}/as3gnuTasks.tasks" toDir="${lib.dir}" />
+		
+		<!-- copy files in project templates -->
+		<copy file="${lib.dir}/as3gnuTasks.tasks" toDir="${src.dir}/library-project" />
+		<copy file="${lib.out}" toDir="${src.dir}/library-project" />
     </target>
     
     <!-- Makes a distribution file -->

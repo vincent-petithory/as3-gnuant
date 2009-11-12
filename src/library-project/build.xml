@@ -41,8 +41,8 @@
 			<condition>
 				<not>
 					<and>
-						<available file="${project.output}" />
-						<available file="${project.man.api}" />
+						<available file="${project.lib}" />
+						<available file="${project.man}" />
 					</and>
 				</not>
 			</condition>
