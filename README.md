@@ -1,11 +1,11 @@
 as3-gnuant
 
 
-== Ant tasks == 
+## Ant tasks 
 
 usage:
 	
-=== flexsdk ===
+### flexsdk 
 
 <taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
 <flexsdk location="/home/vincent/dev/Flex SDK 3/" />
@@ -22,7 +22,7 @@ usage:
 	  Typically, you would have set the bin directory of the Flex SDK for an easy access in a shell/command prompt
 
 
-=== mxmlc ===
+### mxmlc 
 
 <mxmlc>
 	<arg line="-file-specs Main.as" />
@@ -40,7 +40,7 @@ Note: On Linux, you must have downloaded the separate AIR SDK for Linux and, it 
 
 *compc* and *asdoc* work the same.
 
-=== adl ===
+### adl 
 
 <adl xml="application.xml" />
 
@@ -51,7 +51,7 @@ Note: On Linux, you must have downloaded the separate AIR SDK for Linux and, it 
 * causes adl to run in the ./bin directory and with three command line arguments : 'foo' , 'bar' and 'foo bar'
 	
 
-== gnu targets == 
+## gnu targets 
 
 This project is *not* an implementation of gnu tools like autoconf, automake, 
 for as3 projects.
@@ -83,7 +83,7 @@ samples (!!) you can run with an ant command like :
 
 ant sample -Dsample=MySampleClass
 
-FAQ:
+## FAQ:
 
 Well, that build system will never fit exactly my needs, 
 so why use it instead of making my own ?
