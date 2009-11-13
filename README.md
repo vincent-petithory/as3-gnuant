@@ -1,60 +1,61 @@
 as3-gnuant
 
 
-== ant tasks == 
+== Ant tasks == 
 
 usage:
 	
-	=== task ===
-	
-	<taskdef file="flexc.tasks" classpath="flexc.jar" />
-	<flexsdk location="D:/dev/Flex SDK 3/" />
+=== flexsdk ===
 
-	* declares the task definition and the location of the flex sdk
-	
-	<taskdef file="flexc.tasks" classpath="flexc.jar" />
-	
-	* declares the task definition. The location of the Flex sdk will be resolved in the following order :
-		- if a project property 'flex.sdk.location exists, it is used.
-		- if a project property 'FLEX_HOME' exists, it is used
-		- if a 'FLEX_HOME' environnement var exists, it is used
-		- if a 'Path', 'PATH', or 'path' exists, flexc will try to find the flex sdk in it. 
-		  Typically, you would have set the bin directory of the Flex SDK for an easy access in a shell/command prompt
-	
-	
-	=== mxmlc ===
-	
-	<mxmlc>
-		<arg line="-file-specs Main.as" />
-	</mxmlc>
-	
-	* calls mxmlc and compiles the file Main.as
-	
-	<mxmlc air="true">
-		<arg line="-file-specs Main.as" />
-	</mxmlc>
-	
-	* calls mxmlc and compiles the file Main.as for air. It will call air-config.xml instead of flex-config.xml
-	
-	Note: On Linux, you must have downloaded the separate AIR SDK for Linux and, it is assumed you renamed the adl binary file to adl_lin. That name is the one expected by Flex Builder for Linux, so that everything works in both use cases.
-	
-	=== adl ===
-	
-	<adl xml="application.xml" />
-	
-	* calls adl with the application descriptor application.xml.
-	
-	<adl xml="application.xml" dir="./bin" arguments="foo bar \"foo bar\"" />
-	
-	* causes adl to run in the ./bin directory and with three command line arguments : 'foo' , 'bar' and 'foo bar'
-	
+<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
+<flexsdk location="/home/vincent/dev/Flex SDK 3/" />
 
+* declares the task definition and the location of the flex sdk
+
+<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
+
+* declares the task definition. The location of the Flex sdk will be resolved in the following order :
+	- if a project property 'flex.sdk.location exists, it is used.
+	- if a project property 'FLEX_HOME' exists, it is used
+	- if a 'FLEX_HOME' environnement var exists, it is used
+	- if a 'Path', 'PATH', or 'path' exists, flexc will try to find the flex sdk in it. 
+	  Typically, you would have set the bin directory of the Flex SDK for an easy access in a shell/command prompt
+
+
+=== mxmlc ===
+
+<mxmlc>
+	<arg line="-file-specs Main.as" />
+</mxmlc>
+
+* calls mxmlc and compiles the file Main.as
+
+<mxmlc air="true">
+	<arg line="-file-specs Main.as" />
+</mxmlc>
+
+* calls mxmlc and compiles the file Main.as for air. It will call air-config.xml instead of flex-config.xml
+
+Note: On Linux, you must have downloaded the separate AIR SDK for Linux and, it is assumed you renamed the adl binary file to adl_lin. That name is the one expected by Flex Builder for Linux, so that everything works in both use cases.
+
+*compc* and *asdoc* work the same.
+
+=== adl ===
+
+<adl xml="application.xml" />
+
+* calls adl with the application descriptor application.xml.
+
+<adl xml="application.xml" dir="./bin" arguments="foo bar \"foo bar\"" />
+
+* causes adl to run in the ./bin directory and with three command line arguments : 'foo' , 'bar' and 'foo bar'
+	
 
 == gnu targets == 
 
 This project is *not* an implementation of gnu tools like autoconf, automake, 
 for as3 projects.
-They are blank projects with build files  that have standard gnu target 
+They are blank projects with build files that have standard gnu target 
 names and behavior.
 
 A base directory tree structure is also provided, but you are not required to 
