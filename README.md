@@ -15,11 +15,12 @@ Declares the task definition and the location of the flex sdk
 	<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
 
 Declares the task definition. The location of the Flex sdk will be resolved in the following order :
+
  * if a project property 'flex.sdk.location exists, it is used.
  * if a project property 'FLEX_HOME' exists, it is used
  * if a 'FLEX_HOME' environnement var exists, it is used
  * if a 'Path', 'PATH', or 'path' exists, the gnu tasks will try to find the flex sdk in it. 
-  Typically, you would have set the bin directory of the Flex SDK for an easy access in a shell/command prompt
+ Typically, you would have set the bin directory of the Flex SDK for an easy access in a shell/command prompt
 
 
 ### mxmlc 
