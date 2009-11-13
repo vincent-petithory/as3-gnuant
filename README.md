@@ -7,12 +7,12 @@ usage:
 	
 ### flexsdk 
 
-<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
-<flexsdk location="/home/vincent/dev/Flex SDK 3/" />
+	<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
+	<flexsdk location="/home/vincent/dev/Flex SDK 3/" />
 
 * declares the task definition and the location of the flex sdk
 
-<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
+	<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
 
 * declares the task definition. The location of the Flex sdk will be resolved in the following order :
 	- if a project property 'flex.sdk.location exists, it is used.
@@ -24,15 +24,15 @@ usage:
 
 ### mxmlc 
 
-<mxmlc>
-	<arg line="-file-specs Main.as" />
-</mxmlc>
+	<mxmlc>
+		<arg line="-file-specs Main.as" />
+	</mxmlc>
 
 * calls mxmlc and compiles the file Main.as
 
-<mxmlc air="true">
-	<arg line="-file-specs Main.as" />
-</mxmlc>
+	<mxmlc air="true">
+		<arg line="-file-specs Main.as" />
+	</mxmlc>
 
 * calls mxmlc and compiles the file Main.as for air. It will call air-config.xml instead of flex-config.xml
 
@@ -42,11 +42,11 @@ Note: On Linux, you must have downloaded the separate AIR SDK for Linux and, it 
 
 ### adl 
 
-<adl xml="application.xml" />
+	<adl xml="application.xml" />
 
 * calls adl with the application descriptor application.xml.
 
-<adl xml="application.xml" dir="./bin" arguments="foo bar \"foo bar\"" />
+	<adl xml="application.xml" dir="./bin" arguments="foo bar \"foo bar\"" />
 
 * causes adl to run in the ./bin directory and with three command line arguments : 'foo' , 'bar' and 'foo bar'
 	
@@ -81,7 +81,7 @@ Targets that are not gnu :
 For the library blank project, there is a samples directory, which contains 
 samples (!!) you can run with an ant command like : 
 
-ant sample -Dsample=MySampleClass
+	ant sample -Dsample=MySampleClass
 
 ## FAQ:
 
