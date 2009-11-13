@@ -8,7 +8,7 @@ usage:
 ### flexsdk 
 
 	<taskdef file="as3gnuTasks.tasks" classpath="as3gnuTasks.jar" />
-	<flexsdk location="/home/vincent/dev/Flex SDK 3/" />
+	<flexsdk location="/home/vincent/dev/flex_sdk/" />
 
 * declares the task definition and the location of the flex sdk
 
@@ -18,7 +18,7 @@ usage:
 	- if a project property 'flex.sdk.location exists, it is used.
 	- if a project property 'FLEX_HOME' exists, it is used
 	- if a 'FLEX_HOME' environnement var exists, it is used
-	- if a 'Path', 'PATH', or 'path' exists, flexc will try to find the flex sdk in it. 
+	- if a 'Path', 'PATH', or 'path' exists, the gnu tasks will try to find the flex sdk in it. 
 	  Typically, you would have set the bin directory of the Flex SDK for an easy access in a shell/command prompt
 
 
@@ -30,9 +30,9 @@ usage:
 
 * calls mxmlc and compiles the file Main.as
 
-	<mxmlc air="true">
-		<arg line="-file-specs Main.as" />
-	</mxmlc>
+		<mxmlc air="true">
+			<arg line="-file-specs Main.as" />
+		</mxmlc>
 
 * calls mxmlc and compiles the file Main.as for air. It will call air-config.xml instead of flex-config.xml
 
