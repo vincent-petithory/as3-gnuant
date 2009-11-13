@@ -1,4 +1,6 @@
-as3-gnuant
+# as3-gnuant
+
+Version 0.7
 
 
 ## Ant tasks 
@@ -86,15 +88,13 @@ samples (!!) you can run with an ant command like :
 
 ## FAQ:
 
-Well, that build system will never fit exactly my needs, 
-so why use it instead of making my own ?
+ * Well, that build system will never fit exactly my needs, so why use it instead of making my own ?
 
 It will save your time spent to set up your project. As everything provided is 
 the expected standard behavior of every project, you are likely to add things 
 specific to your projects rather than tweak or delete things. 
 
-I am already using my own build system on a project, 
-should I change to this one ?
+ * I am already using my own build system on a project, should I change to this one ?
 
 No, because your build system is already set up. You will loose time to adapt 
 your project to that new build system, since your settings are probably 
@@ -102,9 +102,9 @@ different from that one (otherwise, you would not have
 thought of switching to it).
 But you may not be satisfied by your current build system, or it may lack some 
 functionalities (e.g it does not generate tar.gz 
-distribution files automatically). 
+distribution files automatically). In that case, maybe you should choose switch, but it's up to you.
 
-Why choosing this build system, and not another one ?
+ * Why choosing this build system, and not another one ?
 This build system uses gnu standard target names and behavior, which has 
 those two advantages : 
 
@@ -117,7 +117,7 @@ those two advantages :
  * Users of your project will now how to build it without looking how to do it.
 
 
-Supported standard gnu targets :
+## Supported standard gnu targets :
 
  * all (the default)
  * dist
