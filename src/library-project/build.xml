@@ -23,10 +23,10 @@
 	/>
 	
 	<!-- metadata -->
-	<property name="project.metadata.title" value="" />
-	<property name="project.metadata.description" value="" />
-	<property name="project.metadata.publisher" value="" />
-	<property name="project.metadata.creator" value="" />
+	<property name="project.metadata.title" value="'@your-project-title@'" />
+	<property name="project.metadata.description" value="'@your-project-description@'" />
+	<property name="project.metadata.publisher" value="'@your-project-publisher@'" />
+	<property name="project.metadata.creator" value="'@your-project-creator@'" />
 	<property name="project.metadata.language" value="EN" />
 	
 	<!-- Standard targets -->
@@ -69,7 +69,7 @@
 		    <arg value="-define=CFG::player,${player}" />
 		    <arg value="-define=CFG::vector,&quot;CFG::air || CFG::player > 9&quot;" />
 		    <arg value="-define=CFG::array,&quot;!CFG::vector&quot;" />
-		    <arg value="-title ${project.metadata.title} " />
+		    <arg value="-title ${project.metadata.title}" />
 			<arg value="-description ${project.metadata.description}" />
 			<arg value="-publisher ${project.metadata.publisher}" />
 			<arg value="-creator ${project.metadata.creator}" />
