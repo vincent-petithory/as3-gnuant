@@ -3,7 +3,7 @@
 
 	<!-- Properties -->
 
-	<property name="src.dir" value="src/tasks"/>
+	<property name="src.dir" value="src"/>
     <property name="bin.dir" value="bin"/>
     <property name="lib.name" value="${ant.project.name}.jar"/>
     <property name="lib.dir" value="${basedir}/lib"/>
@@ -20,13 +20,17 @@
     <target name="clean" description="Delete all generated files">
         <delete dir="${bin.dir}"/>
         <delete dir="${lib.dir}"/>
+        <delete file="${src.dir}/library-project/${ant.project.name}.jar" />
+        <delete file="${src.dir}/library-project/${ant.project.name}.tasks" />
+        <delete file="${src.dir}/app-project/${ant.project.name}.jar" />
+        <delete file="${src.dir}/app-project/${ant.project.name}.tasks" />
     </target>
     
     <!-- builds the program -->
 
     <target name="all" description="Compiles the tasks">
 		<mkdir dir="${bin.dir}" />
-        <javac srcdir="${src.dir}" destdir="${bin.dir}">
+        <javac srcdir="${src.dir}/tasks" destdir="${bin.dir}">
 			<compilerarg value="-Xlint:unchecked" />
 		</javac>
 		<mkdir dir="${lib.dir}" />
@@ -39,11 +43,33 @@
 				<attribute name="Implementation-Version" value="${version}"/>
 			</manifest>
 		</jar>
-		<copy file="${src.dir}/as3gnuTasks.tasks" toDir="${lib.dir}" />
+		<copy file="${src.dir}/tasks/${ant.project.name}.tasks" toDir="${lib.dir}" />
 		
 		<!-- copy files in project templates -->
-		<copy file="${lib.dir}/as3gnuTasks.tasks" toDir="${src.dir}/library-project" />
+		<copy file="${lib.dir}/${ant.project.name}.tasks" toDir="${src.dir}/library-project" />
 		<copy file="${lib.out}" toDir="${src.dir}/library-project" />
+		<copy file="${lib.dir}/${ant.project.name}.tasks" toDir="${src.dir}/app-project" />
+		<copy file="${lib.out}" toDir="${src.dir}/app-project" />
+		
+		<!-- zip project templates and copy them in lib -->
+		<tar destfile="${lib.dir}/library-project.tar" >
+			<tarfileset 
+				dir="${src.dir}/library-project" 
+				prefix="library-project" 
+			/>
+		</tar>
+		<gzip destfile="${lib.dir}/library-project.tar.gz" src="${lib.dir}/library-project.tar"/>
+		<delete file="${lib.dir}/library-project.tar" />
+		
+		<tar destfile="${lib.dir}/app-project.tar" >
+			<tarfileset 
+				dir="${src.dir}/app-project" 
+				prefix="app-project" 
+			/>
+		</tar>
+		<gzip destfile="${lib.dir}/app-project.tar.gz" src="${lib.dir}/app-project.tar"/>
+		<delete file="${lib.dir}/app-project.tar" />
+		
     </target>
     
     <!-- Makes a distribution file -->

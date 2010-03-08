@@ -1,2 +1,5 @@
 bin
 lib
+*.jar
+*.tasks
+!src/tasks/as3gnuTasks.tasks
